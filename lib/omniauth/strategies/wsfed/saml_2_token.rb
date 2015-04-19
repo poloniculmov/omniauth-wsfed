@@ -12,6 +12,7 @@ module OmniAuth
         def audience
           applies_to = REXML::XPath.first(document, '//t:RequestSecurityTokenResponse/wsp:AppliesTo')
           puts applies_to.inspect
+          puts "ASASASSA"
           REXML::XPath.first(applies_to, '//EndpointReference/Address').text
         end
 
