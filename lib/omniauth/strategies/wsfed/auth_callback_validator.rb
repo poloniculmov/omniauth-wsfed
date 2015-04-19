@@ -28,11 +28,13 @@ module OmniAuth
         end
 
         def validate_issuer!
+          puts auth_callback.issuer
           raise OmniAuth::Strategies::WSFed::ValidationError.new(ISSUER_MISMATCH) unless
               auth_callback.issuer == wsfed_settings[:issuer_name]
         end
 
         def validate_audience!
+          puts auth_callback.audience
           raise OmniAuth::Strategies::WSFed::ValidationError.new(AUDIENCE_MISMATCH) unless
               auth_callback.audience == wsfed_settings[:realm]
         end

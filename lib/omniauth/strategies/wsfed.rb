@@ -21,6 +21,7 @@ module OmniAuth
       def request_phase
         settings = options.dup
         settings[:reply] ||= callback_url
+        puts settings.inspect
         auth_request = OmniAuth::Strategies::WSFed::AuthRequest.new(settings, :whr => @request.params['whr'])
         redirect(auth_request.redirect_url)
       end
@@ -28,8 +29,8 @@ module OmniAuth
       # Parse SAML token...
       def callback_phase
         begin
+          log :info, @request.inspect
           validate_callback_params(@request)
-
           wsfed_callback = request.params['wresult']
 
           signed_document = OmniAuth::Strategies::WSFed::XMLSecurity::SignedDocument.new(wsfed_callback, options)

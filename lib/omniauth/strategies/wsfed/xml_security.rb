@@ -56,7 +56,9 @@ module OmniAuth
 
             # check cert matches registered idp cert
             fingerprint = Digest::SHA1.hexdigest(cert.to_der)
-
+            puts "AAAAAAAAAAAAAAAAA"
+            puts fingerprint
+            puts "VBBBBBBBBBBBBBBBBBBBB``"
             if fingerprint != idp_cert_fingerprint.gsub(/[^a-zA-Z0-9]/,"").downcase
               return soft ? false : (raise OmniAuth::Strategies::WSFed::ValidationError.new("Fingerprint mismatch"))
             end
