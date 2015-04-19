@@ -13,7 +13,7 @@ module OmniAuth
           applies_to = REXML::XPath.first(document, '//t:RequestSecurityTokenResponse/wsp:AppliesTo')
           puts applies_to.inspect
           puts "ASASASSA"
-          REXML::XPath.first(applies_to, '//EndpointReference/Address').text
+          REXML::XPath.first(applies_to, '//wsa:EndpointReference/wsa:Address').text
         end
 
         def issuer
