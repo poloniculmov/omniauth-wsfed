@@ -4,7 +4,7 @@ require File.expand_path('../lib/omniauth-wsfed/version', __FILE__)
 Gem::Specification.new do |gem|
 
   gem.name          = 'omniauth-wsfed'
-  gem.version       = OmniAuth::WSFed::VERSION
+  gem.version       = '0.0.1'
   gem.summary       = %q{A WS-Federation + WS-Trust strategy for OmniAuth.}
   gem.description   = %q{OmniAuth WS-Federation strategy enabling integration with Windows Azure Access Control Service (ACS), Active Directory Federation Services (ADFS) 2.0, custom Identity Providers built with Windows Identity Foundation (WIF) or any other Identity Provider supporting the WS-Federation protocol.}
 
